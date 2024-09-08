@@ -12,9 +12,9 @@ const buttonContainer = document.querySelector(".btn-container");
 
 class Utility {
   static getRandomColor() {
-    var letters = "0123456789ABCDEF";
-    var color = "#";
-    for (var i = 0; i < 6; i++) {
+    const letters = config.hexLetters;
+    const color = config.baseColor;
+    for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
@@ -150,12 +150,12 @@ class Game {
 
       if (this.clickIndex === this.buttonArray.length) {
         setTimeout(() => {
-          alert("Excellent memory!");
+          alert(messages.excellentMemory);
           document.removeEventListener("click", this.handleClick);
         }, 100);
       }
     } else {
-      alert("Wrong order!");
+      alert(messages.wrongOrder);
       this.revealCorrectOrder();
       document.removeEventListener("click", this.handleClick);
     }
@@ -175,7 +175,7 @@ document.getElementById("start-form").addEventListener("submit", (e) => {
   e.preventDefault();
   const buttonNums = document.getElementById("button-numbers").value;
   if (buttonNums.trim() === "" || buttonNums < 3 || buttonNums > 7) {
-    alert("Number of buttons must be between 3 and 7.");
+    alert(messages.invalidButtonNumber);
     return;
   }
   game.startGame(buttonNums);
