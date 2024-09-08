@@ -1,0 +1,45 @@
+/* Flexbox-based layout */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.btn-container {
+  position: relative;
+  background-color: #f0f0f0;
+  flex-grow: 1;
+  width: 100%;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  display: inline-block;
+  position: absolute;
+  width: 10em;
+  height: 5em;
+  font-size: 2em;
+  text-align: center;
+  background-color: #4caf50;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
