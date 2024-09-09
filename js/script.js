@@ -9,11 +9,10 @@
 */
 
 const buttonContainer = document.querySelector(".btn-container");
-
 class Utility {
   static getRandomColor() {
     const letters = config.hexLetters;
-    const color = config.baseColor;
+    let color = config.baseColor;
     for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
     }
@@ -31,8 +30,9 @@ class Utility {
     const maxHeight = containerHeight - buttonHeight;
 
     for (let i = 0; i < buttonArray.length; i++) {
-      const randomLeft = Math.floor(Math.random() * maxWidth);
-      const randomTop = Math.floor(Math.random() * maxHeight);
+      const randomLeft = Math.floor(Math.random() * maxWidth) - buttonWidth / 2;
+      const randomTop =
+        Math.floor(Math.random() * maxHeight) - buttonHeight / 2;
       const button = buttonArray[i];
       button.style.position = "absolute";
       button.style.left = `${randomLeft}px`;

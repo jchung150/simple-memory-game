@@ -25,6 +25,7 @@ html {
   width: 100%;
   border: 1px solid #ccc;
   overflow: hidden;
+  box-sizing: border-box;
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -42,4 +43,5 @@ html {
   border: none;
   cursor: pointer;
   color: white;
+  box-sizing: border-box;
 }
